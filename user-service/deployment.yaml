@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: user-service
-          image: gyongcode/user-service:latest
+          image: gyongcode/user-service:31
           ports:
             - containerPort: 8080
           env:

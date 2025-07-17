@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: post-service
-          image: gyongcode/post-service:latest
+          image: gyongcode/post-service:31
           ports:
             - containerPort: 8080
           env:

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: consulting-service
-          image: gyongcode/consulting-service:latest
+          image: gyongcode/consulting-service:31
           ports:
             - containerPort: 8080
           env:
