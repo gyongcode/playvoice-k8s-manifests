@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-boot
+  name: ingress-post-service
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/rewrite-target: /$2
@@ -10,7 +10,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /boot(/|$)(.*)
+          - path: /post-service(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
               service:

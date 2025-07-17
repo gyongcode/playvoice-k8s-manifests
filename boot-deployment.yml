@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: boot-deployment
+  name: post-servicet-deployment
 spec:
   selector:
     matchLabels:
-      app: boot
-  replicas: 3
+      app: post-service
+  replicas: 2
   template:
     metadata:
       labels:
-        app: boot
+        app: post-service
     spec:
       containers:
-        - name: boot-container
-          image: coffit23/argocd-pipe:latest
+        - name: post-service-container
+          image: gyongcode/post-service:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -22,11 +22,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: boot-service
+  name: post-service-service
 spec:
   type: ClusterIP
   ports:
     - port: 8001
       targetPort: 8080
   selector:
-    app: boot
+    app: post-service
