@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: comment-service
-          image: gyongcode/comment-service:31
+          image: gyongcode/comment-service:32
           ports:
             - containerPort: 8080
           env:
