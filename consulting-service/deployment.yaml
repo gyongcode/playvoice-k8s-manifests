@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consulting-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: consulting-service
+  template:
+    metadata:
+      labels:
+        app: consulting-service
+    spec:
+      containers:
+        - name: consulting-service
+          image: gyongcode/consulting-service:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "prod" 
